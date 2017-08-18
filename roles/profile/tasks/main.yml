@@ -1,0 +1,9 @@
+---
+- name: copy .bash_profile to target
+  copy:
+    src: bash_profile
+    dest: /home/lupin/.bash_profile
+    owner: lupin
+    group: lupin
+    mode: 0644
+  tags: profile

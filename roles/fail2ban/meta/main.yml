@@ -1,0 +1,9 @@
+galaxy_info:
+  author: lupin3000
+  description: fail2ban installation and configuration
+  license: license (BSD)
+  min_ansible_version: 1.2
+  platforms:
+    - name: CentOS
+  versions:
+    - 7

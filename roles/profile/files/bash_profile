@@ -1,0 +1,33 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+###############
+### ALIASES ###
+###############
+
+# remove verbose
+alias rm='rm -v'
+
+# copy verbose
+alias cp='cp -v'
+
+# move verbose
+alias mv='mv -v'
+
+# refresh shell
+alias reload='source ~/.bash_profile'
+
+###############################
+### ENVIRONMENTAL VARIABLES ###
+###############################
+
+# export path
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+#################
+### FUNCTIONS ###
+#################

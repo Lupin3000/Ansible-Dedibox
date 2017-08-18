@@ -1,0 +1,9 @@
+---
+- hosts: all
+  gather_facts: yes
+  roles:
+    - common
+    - ntpd
+    - sshd
+    - fail2ban
+    - profile

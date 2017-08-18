@@ -1,0 +1,40 @@
+---
+- name: ensure fail2ban packages are installed
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - fail2ban
+    - fail2ban-systemd
+  tags: fail2ban
+
+- name: update policies
+  yum:
+    name: 'selinux-policy*'
+    state: latest
+  tags: fail2ban
+
+- name: copy default jail rules
+  copy:
+    src: jail.local
+    dest: /etc/fail2ban/jail.local
+    owner: root
+    group: root
+    mode: 0644
+  tags: fail2ban
+
+- name: copy sshd fail2ban rules
+  copy:
+    src: sshd.local
+    dest: /etc/fail2ban/jail.d/sshd.local
+    owner: root
+    group: root
+    mode: 0644
+  tags: fail2ban
+
+- name: ensure fail2ban service is enabled and started
+  systemd:
+    name: fail2ban
+    enabled: yes
+    state: started
+  tags: fail2ban

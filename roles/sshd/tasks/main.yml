@@ -1,0 +1,50 @@
+---
+- name: disallow UseDns
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^UseDNS"
+    line: "UseDNS no"
+    state: present
+  notify:
+    - restart sshd
+  tags: sshd
+
+- name: disallow RootLogin
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^PermitRootLogin"
+    line: "PermitRootLogin no"
+    state: present
+  notify:
+    - restart sshd
+  tags: sshd
+
+- name: disallow PasswordAuthentication
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^PasswordAuthentication"
+    line: "PasswordAuthentication no"
+    state: present
+  notify:
+    - restart sshd
+  tags: sshd
+
+- name: disallow PermitEmptyPasswords
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^PermitEmptyPasswords"
+    line: "PermitEmptyPasswords no"
+    state: present
+  notify:
+    - restart sshd
+  tags: sshd
+
+- name: disallow PermitUserEnvironment
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^PermitUserEnvironment"
+    line: "PermitUserEnvironment no"
+    state: present
+  notify:
+    - restart sshd
+  tags: sshd

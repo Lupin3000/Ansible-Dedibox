@@ -22,3 +22,7 @@ remove_packages:
   - iwl6050-firmware
   - iwl7260-firmware
   - iwl7265-firmware
+  - alsa-firmware
+  - alsa-lib
+  - alsa-tools-firmware
+  - aic94xx-firmware

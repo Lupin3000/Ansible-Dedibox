@@ -15,11 +15,10 @@
     - "{{ base_packages }}"
   tags: base
 
-- name: ensure global bash configuration is set
-  copy:
-    src: global.sh
-    dest: /etc/profile.d/global.sh
-    owner: root
-    group: root
-    mode: 0644
+- name: ensure unused base packages are removed
+  yum:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - "{{ remove_packages }}"
   tags: base

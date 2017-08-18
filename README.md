@@ -1,11 +1,11 @@
-# Ansible
+# Ansible-Dedibox
 
 ## Preparation
 
 Following steps are needed before run Ansible!
 
 - enable passwordless sudo
-- add user to user group wheel
+- add user lupin to group wheel
 
 ```shell
 # edit the sudoers file

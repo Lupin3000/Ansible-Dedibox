@@ -1,4 +1,5 @@
 ---
 base_packages:
+  - firewalld
   - vim
   - epel-release

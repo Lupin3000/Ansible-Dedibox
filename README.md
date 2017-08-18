@@ -24,6 +24,13 @@ $ usermod -G wheel lupin
 
 Furthermore, the SSH public key must be available to the user lupin.
 
+## Check SSHD configuration
+
+```shell
+# run extended test mode
+$ sshd -T
+```
+
 ## Check fail2ban status
 
 ```shell

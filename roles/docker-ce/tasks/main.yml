@@ -1,0 +1,31 @@
+---
+- name: ensure needed base packages are installed
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+  tags: docker
+
+- name: add docker-ce repository
+  copy:
+    src: docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+    owner: root
+    group: root
+    mode: 0644
+  tags: docker
+
+- name: add docker-ce gpg
+  rpm_key:
+    state: present
+    key: https://download.docker.com/linux/centos/gpg
+  tags: docker
+
+- name: install docker-ce stable
+  yum:
+    name: docker-ce
+    state: present
+  tags: docker

@@ -7,3 +7,4 @@
     - sshd
     - fail2ban
     - profile
+    - docker-ce

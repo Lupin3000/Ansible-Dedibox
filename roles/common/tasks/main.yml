@@ -22,3 +22,12 @@
   with_items:
     - "{{ remove_packages }}"
   tags: base
+
+- include_role:
+    name: sshd
+
+- include_role:
+    name: firewalld
+
+- include_role:
+    name: ntpd

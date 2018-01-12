@@ -3,8 +3,6 @@
   gather_facts: yes
   roles:
     - common
-    - ntpd
-    - sshd
     - fail2ban
     - profile
     - docker-ce

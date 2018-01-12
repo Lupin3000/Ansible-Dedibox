@@ -40,3 +40,13 @@ $ fail2ban-client status
 # check fail2ban sshd status
 $ fail2ban-client status sshd
 ```
+
+# check firewalld settings
+```shell
+$ firewall-cmd --list-all
+```
+
+# check kernel version
+```shell
+$ uname r
+```

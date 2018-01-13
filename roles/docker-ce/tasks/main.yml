@@ -30,6 +30,12 @@
     state: present
   tags: docker
 
+- name: create docker group
+  group:
+    name: docker
+    state: present
+  tags: docker
+
 - name: enable and start docker
   systemd:
     name: docker

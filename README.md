@@ -5,7 +5,7 @@
 Following steps are needed before run Ansible!
 
 - enable passwordless sudo
-- add user lupin to group wheel
+- add for ansible user to group wheel
 
 ```shell
 # edit the sudoers file
@@ -22,7 +22,7 @@ $ visudo
 $ usermod -G wheel <username>
 ```
 
-Furthermore, the SSH public key must be available to the user lupin.
+Furthermore, the SSH public key must be available to the user.
 
 ## Check SSHD configuration
 

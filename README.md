@@ -19,7 +19,7 @@ $ visudo
 ...
 
 # modify user group
-$ usermod -G wheel lupin
+$ usermod -G wheel <username>
 ```
 
 Furthermore, the SSH public key must be available to the user lupin.
